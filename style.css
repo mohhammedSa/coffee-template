@@ -1,0 +1,260 @@
+/* global Rules  */
+:root {
+  --main-font: "Inconsolata", monospace;
+  --second-font: "Imperial Script", cursive;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+/* Small  */
+
+@media (min-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+  .container {
+    width: 900px;
+  }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+/* global rules  */
+/* start header  */
+header {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  left: 0%;
+  z-index: 10;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+li {
+  padding: 1em 2em;
+  max-width: 25%;
+  width: 25%;
+  text-align: center;
+}
+a {
+  color: white;
+  font-family: var(--main-font);
+}
+li:hover {
+  background-color: gainsboro;
+}
+li:hover a {
+  color: black;
+  font-weight: bold;
+}
+/* end header  */
+/* start landing  */
+.landing {
+  background-image: url("./img/aout-min.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(70%);
+  height: 500px;
+  position: relative;
+}
+.landing h1 {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  line-height: 1.5;
+  color: white;
+  font-family: var(--second-font);
+  animation-name: heading-move;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes heading-move {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+  }
+  50% {
+    transform: translate(-50%, -60%);
+    font-size: 5.5em;
+  }
+}
+.landing .foot {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+}
+.landing .foot p {
+  color: white;
+  margin: 10px;
+  padding: 0.3em 1em;
+  font-family: var(--main-font);
+}
+.landing .foot p:first-child {
+  background-color: black;
+}
+@media (max-width: 767px) {
+  .landing .foot p:first-child {
+    display: none;
+  }
+}
+
+/* end landing  */
+/* start about  */
+.about {
+  margin: 50px 0;
+  text-align: center;
+}
+.main-heading {
+  background-color: black;
+  color: white;
+  display: inline;
+  padding: 0.5em 1em;
+  font-family: var(--main-font);
+}
+.about p {
+  width: 70%;
+  max-width: 100%;
+  font-family: var(--main-font);
+  font-size: 1.3rem;
+  margin: 0 auto;
+  line-height: 1.4;
+  text-align: left;
+}
+.about p:first-of-type {
+  margin: 3em auto 1em;
+}
+.quote {
+  background-color: #f1f1f1;
+  width: 70%;
+  max-width: 100%;
+  margin: 2em auto 0;
+  padding: 2em;
+  position: relative;
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: #cccccc;
+}
+.quote p:first-of-type {
+  font-size: 18px;
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+.quote .chef {
+  margin: 0;
+  font-size: 18px;
+}
+.about-img {
+  width: 70%;
+  max-width: 100%;
+  margin-top: 2em;
+  filter: grayscale(80%);
+}
+.schedule p:first-of-type {
+  margin-top: 1em;
+}
+/* end about  */
+/* start maps  */
+.maps {
+  text-align: center;
+  font-family: var(--main-font);
+}
+.maps .content {
+  width: 70%;
+  max-width: 100%;
+  margin: 50px auto;
+  text-align: left;
+}
+.maps h1 {
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+.maps p:first-of-type {
+  font-size: 18px;
+}
+.maps img {
+  margin: 1.5em 0;
+  max-width: 100%;
+}
+.maps p:nth-child(3) {
+  line-height: 1.5;
+}
+.maps p:nth-child(3) span {
+  background-color: black;
+  color: white;
+  padding: 0.2em;
+}
+.maps p:last-of-type {
+  margin: 1.5em 0;
+}
+.maps form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.maps form input {
+  padding: 1em;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+}
+.maps input:last-child {
+  width: fit-content;
+  background-color: black;
+  color: white;
+}
+
+/* end maps  */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: bisque;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+}
+footer p {
+  font-weight: bold;
+  font-family: var(--second-font);
+  font-size: 30px;
+}
